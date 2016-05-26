@@ -1,0 +1,16 @@
+<div class="grid-block small-up-3" style="background-color: yellow">
+    <div ng-repeat="i in getNumber(myNumber) track by $index" class="grid-content" style="background-color: red">
+      <div class="rhombus">
+        <p class="">Hello №{{$index+1}}</p>
+      </div>
+    </div>
+</div>
+
+
+
+<span ng-repeat="row in matrix track by $index"><br>
+    <span ng-repeat="element in row track by $index">
+      <textarea ng-model="matrix[$parent.$index][$index]" rows="1" cols="1"></textarea>
+     </span>
+</span>
+{{matrix}}

@@ -1,11 +1,11 @@
-app.controller("calendarDemo", function ($scope) {
+app.controller("CalendarMonthController", function ($scope) {
   $scope.day = moment();
 });
 
 app.directive("calendar", function () {
   return {
     restrict: "E",
-    templateUrl: "templates/calendar.html",
+    templateUrl: "templates/calendarMonth.html",
     scope: {
       selected: "="
     },
@@ -27,14 +27,14 @@ app.directive("calendar", function () {
 
       scope.next = function () {
         var next = scope.month.clone();
-        _removeTime(next.month(next.month() + 1).date(1).day(0));
+        _removeTime(next.month(next.month() + 1).date(1).day(1));
         scope.month.month(scope.month.month() + 1);
         _buildMonth(scope, next, scope.month);
       };
 
       scope.previous = function () {
         var previous = scope.month.clone();
-        _removeTime(previous.month(previous.month() - 1).date(1).day(0));
+        _removeTime(previous.month(previous.month() - 1).date(1).day(1));
         scope.month.month(scope.month.month() - 1);
         _buildMonth(scope, previous, scope.month);
       };

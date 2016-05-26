@@ -48,7 +48,8 @@ var paths = {
   // These files are for your app's JavaScript
   appJS: [
     'client/assets/js/app.js',
-    'client/assets/js/directive.js'
+    'client/assets/js/calendarMonthDirective.js',
+    'client/assets/js/myCalendarController.js'
   ]
 };
 
@@ -183,11 +184,14 @@ gulp.task('build', function(cb) {
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
 gulp.task('default', ['server'], function () {
+  // Watch Sass & Less
+   gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass-less']);
+
   // Watch Sass
-  gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
+ // gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['sass']);
 
   // Watch Less
-  gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['less']);
+ // gulp.watch(['./client/assets/scss/**/*', './scss/**/*'], ['less']);
 
   // Watch JavaScript
   gulp.watch(['./client/assets/js/**/*', './js/**/*'], ['uglify:app']);

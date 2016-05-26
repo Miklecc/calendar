@@ -1,2 +1,25 @@
 @import "settings";
 @import "foundation";
+
+.rhombus{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  -webkit-transform: rotate(45deg);
+}
+
+.rhombus p {
+  -webkit-transform: rotate(-45deg);
+  text-align: center;
+  line-height: 100px;
+}
+
+.center {
+  /*centering*/
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
